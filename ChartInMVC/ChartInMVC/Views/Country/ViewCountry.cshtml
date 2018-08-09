@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ChartInMVC.Models.Country>
+
+@{
+    ViewBag.Title = "ViewCountry";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<p>
+    <a href="@Url.Action("AddCountry", "Country")" id="Add" class="btn btn-primary">Create New &nbsp;<i class="glyphicon glyphicon-plus"></i></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>SL No.</th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryName)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{i++;}
+                    @i
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryName)
+                </td>                
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>

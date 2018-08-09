@@ -77,8 +77,7 @@ D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Microsoft.Owin.Security.OAuth.xml
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Microsoft.Owin.Security.Google.xml
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Microsoft.Owin.Security.Twitter.xml
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.csprojResolveAssemblyReference.cache
-D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.dll
-D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.pdb
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.Migrations.init.resources
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.csproj.GenerateResource.Cache
+D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.dll
+D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.pdb
