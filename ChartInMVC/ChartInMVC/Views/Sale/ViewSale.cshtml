@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ChartInMVC.Models.Sale>
+
+@{
+    ViewBag.Title = "ViewSale";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 align="center">Sales Details</h2>
+
+
+
+<div align="right">
+    <p>Total Sale= @ViewBag.TotalSale</p>
+    <p>Total Count=@ViewBag.ProductWiseSale</p>
+    <p>Total Name=@ViewBag.Name</p>
+</div>
+
+
+
+
+<p>
+    <a href="@Url.Action("SaleProduct", "Sale")" id="Add" class="btn btn-primary">Create New &nbsp;<i class="glyphicon glyphicon-plus"></i></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Sl No.
+            </th>
+            <th>
+               Product
+            </th>
+            <th>
+                QTY
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Country
+            </th>           
+        </tr>
+    </thead>
+    <tbody>
+        @{ int i = 0;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{ i++;}
+                    @i
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.ProductName)
+                </td>    
+                <td>
+                    @Html.DisplayFor(modelItem=>item.Quantity)
+                </td>                           
+                <td>
+                    @Html.DisplayFor(modelItem => item.State.StateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country.CountryName)
+                </td>                
+            </tr>
+        }
+
+    </tbody>
+</table>

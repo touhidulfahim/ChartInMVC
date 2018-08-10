@@ -25,6 +25,7 @@ namespace ChartInMVC.Models
         {
         }
 
+        
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Country> Country { get; set; }
         public virtual DbSet<State> State { get; set; }

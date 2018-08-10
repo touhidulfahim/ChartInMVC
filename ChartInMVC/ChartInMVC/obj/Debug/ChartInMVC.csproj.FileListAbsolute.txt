@@ -82,3 +82,6 @@ D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.csproj.GenerateR
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.dll
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.pdb
 D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.csprojResolveAssemblyReference.cache
+D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Dapper.dll
+D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\bin\Dapper.xml
+D:\GitHub\ChartInMVC\ChartInMVC\ChartInMVC\obj\Debug\ChartInMVC.Migrations.updateSale.resources

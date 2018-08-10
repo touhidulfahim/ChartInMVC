@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+        <div class="col-md-12">
+            <canvas id="myChart" width="800" height="400"></canvas>
+            <div id="legendChart" class="chart-legend"></div>
+        </div>
+    </div>
+@section Scripts {
+    <script type="text/javascript">
+
+            var datachart = {
+                labels: [],
+                datasets: [
+
+                   
+                    {
+                        label: "QTY",
+                        backgroundColor: "rgba(90,193,208,0.3)",
+                        borderColor: "rgba(151,187,205,0.7)",
+                        borderWidth: 1,
+                        hoverBackgroundColor: "rgba(151,187,205,1)",
+                        hoverBorderColor: "rgba(151,187,205,0.5)",
+                        data: []
+                    }
+                ]
+            };
+
+
+            $.getJSON("/Dashbord/GetData/", function (data) {
+                $.each(data, function (i, item) {
+                    datachart.labels.push(item.Name);
+                    datachart.datasets[0].data.push(item.QTY);
+                })
+                var ctx = document.getElementById("myChart").getContext("2d");
+
+                var myBarChart = new Chart(ctx,
+                    {
+                        type: 'bar',
+                        data: datachart,
+                        options: {}
+                    });
+            });
+
+        </script>
+
+}
+
+

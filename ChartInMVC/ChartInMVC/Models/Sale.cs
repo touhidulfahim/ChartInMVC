@@ -13,8 +13,10 @@ namespace ChartInMVC.Models
         public int ProductId { get; set; }
         public int StateId { get; set; }
         public int CountryId { get; set; }
-
+        public int Quantity { get; set; }
         
+
+
         [ForeignKey("CountryId")]
         public virtual Country Country { get; set; }
         [ForeignKey("StateId")]
