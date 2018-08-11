@@ -3,7 +3,7 @@ namespace ChartInMVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class init : DbMigration
+    public partial class updatever11 : DbMigration
     {
         public override void Up()
         {
@@ -43,8 +43,8 @@ namespace ChartInMVC.Migrations
                         RoleId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
             
@@ -58,9 +58,9 @@ namespace ChartInMVC.Migrations
                         CountryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.SaleId)
-                .ForeignKey("dbo.Countries", t => t.CountryId, cascadeDelete: true)
-                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .ForeignKey("dbo.States", t => t.StateId, cascadeDelete: true)
+                .ForeignKey("dbo.Countries", t => t.CountryId)
+                .ForeignKey("dbo.Products", t => t.ProductId)
+                .ForeignKey("dbo.States", t => t.StateId)
                 .Index(t => t.ProductId)
                 .Index(t => t.StateId)
                 .Index(t => t.CountryId);
@@ -71,8 +71,11 @@ namespace ChartInMVC.Migrations
                     {
                         StateId = c.Int(nullable: false, identity: true),
                         StateName = c.String(),
+                        CountryId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.StateId);
+                .PrimaryKey(t => t.StateId)
+                .ForeignKey("dbo.Countries", t => t.CountryId)
+                .Index(t => t.CountryId);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -104,7 +107,7 @@ namespace ChartInMVC.Migrations
                         ClaimValue = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -116,7 +119,7 @@ namespace ChartInMVC.Migrations
                         UserId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
             
         }
@@ -127,12 +130,14 @@ namespace ChartInMVC.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.Sales", "StateId", "dbo.States");
+            DropForeignKey("dbo.States", "CountryId", "dbo.Countries");
             DropForeignKey("dbo.Sales", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Sales", "CountryId", "dbo.Countries");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.States", new[] { "CountryId" });
             DropIndex("dbo.Sales", new[] { "CountryId" });
             DropIndex("dbo.Sales", new[] { "StateId" });
             DropIndex("dbo.Sales", new[] { "ProductId" });

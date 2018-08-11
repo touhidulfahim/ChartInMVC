@@ -14,11 +14,13 @@ namespace ChartInMVC.Controllers
 
 
         public ActionResult Index()
-        {           
+        {
+            //var getStateWiseSale = db.Sale.Aggregate();
+                    
             return View();           
         }
 
-
+        
         public ContentResult GetData()
         {
 
@@ -29,7 +31,7 @@ namespace ChartInMVC.Controllers
             {
                 SaleViewModel sl = new SaleViewModel();
                 sl.Name = sales.Product.ProductName;
-                sl.QTY = sales.Quantity;                
+                //sl.QTY = sales.Quantity;                
                 SL.Add(sl);
                 
             }

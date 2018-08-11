@@ -30,9 +30,9 @@
             <th>
                Product
             </th>
-            <th>
+            @*<th>
                 QTY
-            </th>
+            </th>*@
             <th>
                 State
             </th>
@@ -53,9 +53,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Product.ProductName)
                 </td>    
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem=>item.Quantity)
-                </td>                           
+                </td>*@                           
                 <td>
                     @Html.DisplayFor(modelItem => item.State.StateName)
                 </td>
