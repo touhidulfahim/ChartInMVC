@@ -15,8 +15,24 @@ namespace ChartInMVC.Controllers
 
         public ActionResult Index()
         {
+
+            var Xcount = db.Sale.ToList().Count(p => p.ProductId != 1);
+            var Gcount = db.Sale.ToList().Count(p => p.ProductId != 2);            
+            var Mcount = db.Sale.ToList().Count(p => p.ProductId != 3);
+            var Bcount = db.Sale.ToList().Count(p => p.ProductId != 5);
+
+
+
+            ViewBag.XRes = Xcount;
+            ViewBag.GRes = Gcount;
+            ViewBag.BRes = Bcount;
+            ViewBag.MRes = Mcount;
+
+
+
+
             //var getStateWiseSale = db.Sale.Aggregate();
-                    
+
             return View();           
         }
 
